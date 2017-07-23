@@ -28,7 +28,10 @@ import android.support.annotation.ColorInt;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.owncloud.android.R;
 import com.owncloud.android.datamodel.FileDataStorageManager;
@@ -40,6 +43,8 @@ import com.owncloud.android.utils.ThemeUtils;
  */
 public abstract class ToolbarActivity extends BaseActivity {
     private ProgressBar mProgressBar;
+    private RelativeLayout mInfoBox;
+    private TextView mInfoBoxMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +66,8 @@ public abstract class ToolbarActivity extends BaseActivity {
 
             ThemeUtils.colorToolbarProgressBar(this, ThemeUtils.primaryColor());
         }
+        mInfoBox = (RelativeLayout) findViewById(R.id.info_box);
+        mInfoBoxMessage = (TextView) findViewById(R.id.info_box_message);
 
         ThemeUtils.colorStatusBar(this, ThemeUtils.primaryDarkColor());
 
@@ -135,6 +142,34 @@ public abstract class ToolbarActivity extends BaseActivity {
     public boolean isRoot(OCFile file) {
         return file == null ||
                 (file.isFolder() && file.getParentId() == FileDataStorageManager.ROOT_PARENT_ID);
+    }
+
+    /**
+     * de-/activates the maintenance message within the toolbar.
+     *
+     * @param active flag is mode should be de-/activated
+     */
+    protected final void setMaintenanceMode(boolean active) {
+        if(active) {
+            mInfoBox.setVisibility(View.VISIBLE);
+            mInfoBoxMessage.setText(R.string.maintenance_mode);
+        } else {
+            mInfoBox.setVisibility(View.GONE);
+        }
+    }
+
+    /**
+     * de-/activates the offline message within the toolbar.
+     *
+     * @param active flag is mode should be de-/activated
+     */
+    protected final void setOfflineMode(boolean active) {
+        if(active) {
+            mInfoBox.setVisibility(View.VISIBLE);
+            mInfoBoxMessage.setText(R.string.offline_mode);
+        } else {
+            mInfoBox.setVisibility(View.GONE);
+        }
     }
 
     /**
