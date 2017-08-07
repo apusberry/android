@@ -670,15 +670,13 @@ public class ExtendedListFragment extends Fragment
     @Override
     public void onRefresh() {
 
-        if (searchView != null) {
-            if (TextUtils.isEmpty(searchView.getQuery())) {
-                searchView.onActionViewCollapsed();
+        if (searchView != null && TextUtils.isEmpty(searchView.getQuery())) {
+            searchView.onActionViewCollapsed();
 
-                Activity activity;
-                if ((activity = getActivity()) != null && activity instanceof FileDisplayActivity) {
-                    FileDisplayActivity fileDisplayActivity = (FileDisplayActivity) activity;
-                    fileDisplayActivity.setDrawerIndicatorEnabled(fileDisplayActivity.isDrawerIndicatorAvailable());
-                }
+            Activity activity;
+            if ((activity = getActivity()) != null && activity instanceof FileDisplayActivity) {
+                FileDisplayActivity fileDisplayActivity = (FileDisplayActivity) activity;
+                fileDisplayActivity.setDrawerIndicatorEnabled(fileDisplayActivity.isDrawerIndicatorAvailable());
             }
         }
 
