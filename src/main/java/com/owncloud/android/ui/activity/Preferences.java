@@ -48,6 +48,7 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.Snackbar;
+import android.support.annotation.NonNull;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatDelegate;
@@ -73,6 +74,7 @@ import com.owncloud.android.lib.common.OwnCloudClientManagerFactory;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.ui.asynctasks.LoadingVersionNumberTask;
 import com.owncloud.android.utils.AnalyticsUtils;
+import com.owncloud.android.utils.DeviceCredentialUtils;
 import com.owncloud.android.utils.DisplayUtils;
 import com.owncloud.android.utils.MimeTypeUtil;
 import com.owncloud.android.utils.ThemeUtils;
@@ -91,12 +93,16 @@ public class Preferences extends PreferenceActivity
     private static final String TAG = Preferences.class.getSimpleName();
 
     public final static String PREFERENCE_USE_FINGERPRINT = "use_fingerprint";
+
+    public final static String PREFERENCE_USE_DEVICE_CREDENTIALS= "use_device_credentials";
+
     public static final String PREFERENCE_EXPERT_MODE = "expert_mode";
 
     private static final String SCREEN_NAME = "Settings";
 
     private static final int ACTION_REQUEST_PASSCODE = 5;
     private static final int ACTION_CONFIRM_PASSCODE = 6;
+    private static final int ACTION_CONFIRM_DEVICE_CREDENTIALS = 7;
 
     private static final int ACTION_REQUEST_CODE_DAVDROID_SETUP = 10;
 
@@ -534,11 +540,14 @@ public class Preferences extends PreferenceActivity
 
         boolean fPassCodeEnabled = getResources().getBoolean(R.bool.passcode_enabled);
         boolean fPrintEnabled = getResources().getBoolean(R.bool.fingerprint_enabled);
+        boolean fDeviceCredentialsEnabled = getResources().getBoolean(R.bool.device_credentials);
         boolean fShowHiddenFilesEnabled = getResources().getBoolean(R.bool.show_hidden_files_enabled);
 
         setupPasscodePreference(preferenceCategoryDetails, fPassCodeEnabled);
 
         setupFingerprintPreference(preferenceCategoryDetails, fPrintEnabled);
+
+        setupDeviceCredentialsPreference(preferenceCategoryDetails, fDeviceCredentialsEnabled);
 
         setupHiddenFilesPreference(preferenceCategoryDetails, fShowHiddenFilesEnabled);
 
@@ -646,6 +655,39 @@ public class Preferences extends PreferenceActivity
             } else {
                 preferenceCategoryDetails.removePreference(fPrint);
             }
+        }
+    }
+
+    private void setupDeviceCredentialsPreference(PreferenceCategory preferenceCategoryDetails,
+                                                  boolean fDeviceCredentialsEnabled) {
+        SwitchPreference useDeviceCredentials = (SwitchPreference) findPreference(PREFERENCE_USE_DEVICE_CREDENTIALS);
+        if (useDeviceCredentials != null && fDeviceCredentialsEnabled && Build.VERSION.SDK_INT >=
+                Build.VERSION_CODES.M) {
+            if (!DeviceCredentialUtils.areCredentialsAvailable(getApplicationContext())) {
+                DisplayUtils.showSnackMessage(this, R.string.prefs_device_credentials_not_setup);
+                useDeviceCredentials.setChecked(false);
+            } else {
+                useDeviceCredentials.setOnPreferenceChangeListener(
+                        new OnPreferenceChangeListener() {
+                    @Override
+                    public boolean onPreferenceChange(Preference preference, Object newValue) {
+                        Boolean incoming = (Boolean) newValue;
+                        if (incoming) {
+                            SharedPreferences appPrefs = PreferenceManager
+                                    .getDefaultSharedPreferences(getApplicationContext());
+                            SharedPreferences.Editor editor = appPrefs.edit();
+                            editor.putBoolean(PREFERENCE_USE_DEVICE_CREDENTIALS, true).apply();
+                            return true;
+                        } else {
+                            Intent i = new Intent(getApplicationContext(), RequestCredentialsActivity.class);
+                            startActivityForResult(i, ACTION_CONFIRM_DEVICE_CREDENTIALS);
+                            return false;
+                        }
+                    }
+                });
+            }
+        } else {
+            preferenceCategoryDetails.removePreference(useDeviceCredentials);
         }
     }
 
@@ -914,10 +956,20 @@ public class Preferences extends PreferenceActivity
             }
         } else if (requestCode == ACTION_REQUEST_CODE_DAVDROID_SETUP && resultCode == RESULT_OK) {
             DisplayUtils.showSnackMessage(this, R.string.prefs_calendar_contacts_sync_setup_successful);
+        } else if (requestCode == ACTION_CONFIRM_DEVICE_CREDENTIALS && resultCode == RESULT_OK) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
+                    data.getBooleanExtra(RequestCredentialsActivity.KEY_CHECK_RESULT, false)) {
+                SharedPreferences.Editor appPrefs = PreferenceManager
+                        .getDefaultSharedPreferences(getApplicationContext()).edit();
+                appPrefs.putBoolean(PREFERENCE_USE_DEVICE_CREDENTIALS, false).apply();
+
+                DisplayUtils.showSnackMessage(this, R.string.credentials_disabled);
+            }
         }
     }
 
     @Override
+    @NonNull
     public MenuInflater getMenuInflater() {
         return getDelegate().getMenuInflater();
     }
