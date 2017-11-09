@@ -40,8 +40,6 @@
     <string name="prefs_category_more">更多</string>
     <string name="prefs_manage_accounts">管理账号</string>
     <string name="prefs_passcode">安全码锁</string>
-    <string name="prefs_fingerprint">指纹锁</string>
-    <string name="prefs_fingerprint_notsetup">未设置指纹。</string>
     <string name="prefs_expert_mode">专家模式</string>
     <string name="prefs_show_hidden_files">显示隐藏文件</string>
     <string name="prefs_log_delete_history_button">删除历史</string>
@@ -578,9 +576,6 @@
     <string name="whats_new_notification_content">获取通知，比如\n\u2022新的远程共享\n\u2022注释提示\n\u2022管理员通知</string>
 
     <string name="whats_new_skip">跳过</string>
-
-    <string name="fingerprint_scan_finger">请扫描你的手指</string>
-    <string name="fingerprint_unknown">手指未被识别</string>
 
     <!-- User information -->
     <string name="user_info_email">邮件</string>

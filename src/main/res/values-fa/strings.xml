@@ -40,8 +40,6 @@
     <string name="prefs_category_more">بیش‌تر</string>
     <string name="prefs_manage_accounts">مدیریت حساب ها </string>
     <string name="prefs_passcode">قفل با رمز </string>
-    <string name="prefs_fingerprint">قفل با اثر انگشت </string>
-    <string name="prefs_fingerprint_notsetup">هیچ اثر انگشتی هنوز انتخاب نشده است </string>
     <string name="prefs_expert_mode">حالت حرفه ای</string>
     <string name="prefs_show_hidden_files">فایل های مخفی را نشان بده </string>
     <string name="prefs_log_delete_history_button">تاریخچه را حذف کنید</string>

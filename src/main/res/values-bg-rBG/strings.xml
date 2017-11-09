@@ -40,8 +40,6 @@
     <string name="prefs_category_more">Още</string>
     <string name="prefs_manage_accounts">Управление на профилите</string>
     <string name="prefs_passcode">Код за достъп</string>
-    <string name="prefs_fingerprint">Заключване с отпечатък</string>
-    <string name="prefs_fingerprint_notsetup">Пръстови отпечатъци не са зададени.</string>
     <string name="prefs_show_hidden_files">Показване и на скрити файлове</string>
     <string name="prefs_log_delete_history_button">Изтрий истрията</string>
     <string name="prefs_calendar_contacts">Синхронизиране на календар и контакти</string>
@@ -360,9 +358,6 @@
     <string name="welcome_feature_3_text">Съхранявайте вашите снимки безопасно</string>
 
     <string name="whats_new_skip">Пропусни</string>
-
-    <string name="fingerprint_scan_finger">Моля, сканирайте пръста си</string>
-    <string name="fingerprint_unknown">Пръстовият отпечатък не е разпознат</string>
 
     <!-- User information -->
     <string name="user_info_email">Е-мейл</string>

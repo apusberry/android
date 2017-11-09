@@ -40,8 +40,6 @@
     <string name="prefs_category_more">Meira</string>
     <string name="prefs_manage_accounts">Sýsla með notandaaðganga</string>
     <string name="prefs_passcode">Læsing með lykilkóða</string>
-    <string name="prefs_fingerprint">Fingrafaralás</string>
-    <string name="prefs_fingerprint_notsetup">Engin fingraför hafa verið sett inn.</string>
     <string name="prefs_expert_mode">Sérfræðingahamur</string>
     <string name="prefs_show_hidden_files">Sýna faldar skrár</string>
     <string name="prefs_log_delete_history_button">Eyða ferli</string>
@@ -589,9 +587,6 @@ Smelltu hér til að fá þér einn frá þjónustuaðila.</string>
     <string name="whats_new_notification_content">Fáðu tilkynningar á borð við\n\u2022 nýjar fjartengdar sameignir\n\u2022 umsagnir um athugasemdir\n\u2022 tilkynningar kerfisstjóra</string>
 
     <string name="whats_new_skip">Sleppa</string>
-
-    <string name="fingerprint_scan_finger">Skannaðu fingurinn þinn</string>
-    <string name="fingerprint_unknown">Fingrafar þekktist ekki</string>
 
     <!-- User information -->
     <string name="user_info_email">Tölvupóstur</string>

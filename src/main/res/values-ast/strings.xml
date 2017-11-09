@@ -40,8 +40,6 @@
     <string name="prefs_category_more">Más</string>
     <string name="prefs_manage_accounts">Xestionar cuentes</string>
     <string name="prefs_passcode">Bloquéu con códigu de pasu</string>
-    <string name="prefs_fingerprint">Bloquéu con buelga</string>
-    <string name="prefs_fingerprint_notsetup">Nun se configuraron buelgues.</string>
     <string name="prefs_expert_mode">Mou espertu</string>
     <string name="prefs_show_hidden_files">Amosar ficheros anubríos</string>
     <string name="prefs_log_delete_history_button">Desaniciar historial</string>
@@ -405,9 +403,6 @@
     <string name="welcome_feature_1_text">Accedu, comparti y protexi los tos ficheros en casa y nel trabayu</string>
 
     <string name="whats_new_skip">Saltar</string>
-
-    <string name="fingerprint_scan_finger">Escania\'l to deu, por favor</string>
-    <string name="fingerprint_unknown">Nun se reconoz el deu</string>
 
     <!-- User information -->
     <string name="user_info_email">Corréu</string>

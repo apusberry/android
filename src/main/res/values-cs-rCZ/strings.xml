@@ -40,8 +40,6 @@
     <string name="prefs_category_more">Více</string>
     <string name="prefs_manage_accounts">Spravovat účty</string>
     <string name="prefs_passcode">Zámek bezpečnostního kódu</string>
-    <string name="prefs_fingerprint">Zámek otiskemprstu</string>
-    <string name="prefs_fingerprint_notsetup">Nebyly nastaveny žádné otisky prstů.</string>
     <string name="prefs_expert_mode">Režim pro experty</string>
     <string name="prefs_show_hidden_files">Zobrazit skryté soubory</string>
     <string name="prefs_log_delete_history_button">Smazat historii</string>
@@ -597,9 +595,6 @@
     <string name="whats_new_notification_content">Získání oznámení, jako \n\u2022 nové vzdálené sdílení \n\u2022 uvedeno v komentáři \n\u2022 oznámení admina</string>
 
     <string name="whats_new_skip">Přeskočit</string>
-
-    <string name="fingerprint_scan_finger">Prosím, naskenujte svůj otisk prstu</string>
-    <string name="fingerprint_unknown">Otisk prstu nerozpoznán</string>
 
     <!-- User information -->
     <string name="user_info_email">E-mail</string>

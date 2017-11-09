@@ -40,8 +40,6 @@
     <string name="prefs_category_more">Meer</string>
     <string name="prefs_manage_accounts">Accounts beheren</string>
     <string name="prefs_passcode">Toegangscode</string>
-    <string name="prefs_fingerprint">Vingerafdrukbeveiliging</string>
-    <string name="prefs_fingerprint_notsetup">Er zijn geen vingerafdrukken ingesteld.</string>
     <string name="prefs_expert_mode">Expertmodus</string>
     <string name="prefs_show_hidden_files">Verborgen bestanden weergeven</string>
     <string name="prefs_log_delete_history_button">Verwijder geschiedenis</string>
@@ -599,9 +597,6 @@ Kies er eentje van een provider.</string>
     <string name="whats_new_notification_content">Krijg notificaties als\n\u2022 nieuwe op afstand gedeelde folders\n\u2022 commentaar, vermeldingen\n\u2022 beheerder aankondigingen.</string>
 
     <string name="whats_new_skip">Overslaan</string>
-
-    <string name="fingerprint_scan_finger">Scan je vinger</string>
-    <string name="fingerprint_unknown">Vinger niet herkend</string>
 
     <!-- User information -->
     <string name="user_info_email">Email</string>

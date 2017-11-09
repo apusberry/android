@@ -40,8 +40,6 @@
     <string name="prefs_category_more">더 보기</string>
     <string name="prefs_manage_accounts">계정 관리</string>
     <string name="prefs_passcode">암호 잠금</string>
-    <string name="prefs_fingerprint">지문 잠금</string>
-    <string name="prefs_fingerprint_notsetup">설정된 지문이 없습니다.</string>
     <string name="prefs_expert_mode">전문가 모드</string>
     <string name="prefs_show_hidden_files">숨겨진 파일보기</string>
     <string name="prefs_log_delete_history_button">내역 삭제</string>
@@ -421,9 +419,6 @@
     <string name="whats_new_theming_title">테마 지원</string>
     <string name="whats_new_notification_title">알림 지원</string>
     <string name="whats_new_skip">건너뛰기</string>
-
-    <string name="fingerprint_scan_finger">지문을 스캔하세요</string>
-    <string name="fingerprint_unknown">지문 인식할 수 없음</string>
 
     <!-- User information -->
     <string name="user_info_email">이메일</string>

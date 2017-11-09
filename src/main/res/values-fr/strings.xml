@@ -40,8 +40,6 @@
     <string name="prefs_category_more">Plus</string>
     <string name="prefs_manage_accounts">Gestion des comptes</string>
     <string name="prefs_passcode">Code de sécurité</string>
-    <string name="prefs_fingerprint">Verrouillage par empreinte digitale</string>
-    <string name="prefs_fingerprint_notsetup">Aucune empreinte digitale n\'a été installée.</string>
     <string name="prefs_expert_mode">Mode Expert</string>
     <string name="prefs_show_hidden_files">Afficher les fichiers masqués</string>
     <string name="prefs_log_delete_history_button">Effacer le journal</string>
@@ -601,9 +599,6 @@ Attention la suppression est irréversible.</string>
     <string name="whats_new_notification_content">Recevoir des notifications, par exemple \n\u2022 nouveau partage distant \n\u2022 nouveaux commentaires \n\u2022 annonces de l\'administrateur</string>
 
     <string name="whats_new_skip">Ignorer</string>
-
-    <string name="fingerprint_scan_finger">Veuillez scanner votre doigt</string>
-    <string name="fingerprint_unknown">Doigt non reconnu</string>
 
     <!-- User information -->
     <string name="user_info_email">Adresse e-mail</string>
