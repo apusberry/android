@@ -450,8 +450,6 @@
     <string name="whats_new_notification_title">Ilmoitustuki</string>
     <string name="whats_new_skip">Skippaa</string>
 
-    <string name="fingerprint_unknown">Sormea ei tunnistettu</string>
-
     <!-- User information -->
     <string name="user_info_email">Sähköposti</string>
     <string name="user_info_phone">Puhelinnumero</string>
