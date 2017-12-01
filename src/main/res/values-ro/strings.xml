@@ -39,7 +39,6 @@
     <string name="prefs_category_general">General</string>
     <string name="prefs_category_more">Mai mult</string>
     <string name="prefs_manage_accounts">Administrare conturi</string>
-    <string name="prefs_passcode">Parolă blocare</string>
     <string name="prefs_expert_mode">Mod expert</string>
     <string name="prefs_show_hidden_files">Arată fișierele ascunse</string>
     <string name="prefs_log_delete_history_button">Șterge istoricul</string>

@@ -39,7 +39,6 @@
     <string name="prefs_category_general">Orokorra</string>
     <string name="prefs_category_more">Gehiago</string>
     <string name="prefs_manage_accounts">Kontuak kudeatu</string>
-    <string name="prefs_passcode">Pasakode bidezko blokeoa</string>
     <string name="prefs_expert_mode">Modu aurreratua</string>
     <string name="prefs_show_hidden_files">Erakutsi ezkutuko fitxategiak</string>
     <string name="prefs_log_delete_history_button">Ezabatu historiala</string>
